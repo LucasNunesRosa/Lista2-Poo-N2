@@ -1,0 +1,55 @@
+package Vendedor1;
+import javax.swing.JOptionPane;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int opc = 0;
+        
+        int codigo;
+        
+        double valorVenda, Comissao, Desconto, valorPagar,resultado, conta;
+        
+        String nome;
+        while (opc != 3) {
+            opc = Integer.parseInt(
+                    JOptionPane.showInputDialog("1 - Cadastrar vendedor\n2 - Calcular venda\n"
+                            + "3 - Sair"));
+            switch (opc) {
+                case 1:
+                codigo = Integer.parseInt(JOptionPane.showInputDialog("codigo"));
+                
+                nome = JOptionPane.showInputDialog("Nome");
+                
+                Comissao = Double.parseDouble(JOptionPane.showInputDialog("Comissao"));
+                
+               break;
+                case 2:
+                     valorVenda = Double.parseDouble(JOptionPane.showInputDialog("valorVenda"));
+                     
+                      Desconto = Double.parseDouble(JOptionPane.showInputDialog("Desconto"));
+                     
+                   resultado = valorVenda - Desconto;
+                    
+               JOptionPane.showMessageDialog(null,"Valor de venda"+ resultado);
+                  break;
+                case 3 :
+                    System.exit(0);
+                    break;
+                    
+                default:
+                    JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA", "Erro", JOptionPane.ERROR_MESSAGE);
+                    break;
+                  
+                        
+               }
+            }
+        }
+    }
+
+               
+                
+              
+                
