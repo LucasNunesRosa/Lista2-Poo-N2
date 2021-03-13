@@ -10,6 +10,10 @@ public class Main {
         
         int codigo;
         
+        Vendedor vendedor = new Vendedor();
+    
+    
+        
         double valorVenda, Comissao, Desconto, valorPagar,resultado, conta;
         
         String nome;
@@ -21,20 +25,25 @@ public class Main {
                 case 1:
                 codigo = Integer.parseInt(JOptionPane.showInputDialog("codigo"));
                 
+                vendedor.setCodigo(codigo);
+                
                 nome = JOptionPane.showInputDialog("Nome");
+                vendedor.setNome(nome);
                 
                 Comissao = Double.parseDouble(JOptionPane.showInputDialog("Comissao"));
+                vendedor.setPercentualComissao(Comissao);
                 
-               break;
+                   break;
                 case 2:
-                     valorVenda = Double.parseDouble(JOptionPane.showInputDialog("valorVenda"));
+                   valorVenda = Double.parseDouble(JOptionPane.showInputDialog("valorVenda"));
                      
-                      Desconto = Double.parseDouble(JOptionPane.showInputDialog("Desconto"));
+                   Desconto = Double.parseDouble(JOptionPane.showInputDialog("Desconto"));
                      
                    resultado = valorVenda - Desconto;
                     
-               JOptionPane.showMessageDialog(null,"Valor de venda"+ resultado);
-                  break;
+                   JOptionPane.showMessageDialog(null,vendedor.imprimir(valorVenda, Desconto));
+                   
+                    break;
                 case 3 :
                     System.exit(0);
                     break;
@@ -43,13 +52,8 @@ public class Main {
                     JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA", "Erro", JOptionPane.ERROR_MESSAGE);
                     break;
                   
-                        
-               }
             }
         }
     }
+}
 
-               
-                
-              
-                
