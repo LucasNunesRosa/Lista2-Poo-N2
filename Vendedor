@@ -1,3 +1,5 @@
+package Vendedor1; 
+        
 public class Vendedor {
 
     public int getCodigo() {
@@ -43,8 +45,10 @@ public class Vendedor {
     //Retornar: valorTotalVenda * percentualComissao / 100
     
     public double calcularPagamentoComissao(double valorVenda){
-        return valorVenda * percentualComissao / 100;
+      return valorVenda * percentualComissao / 100;
     }
+     
+    
     
     //calcularPagamentoComissao(valorVenda : double, desconto:double): double
     //Retornar: calcularPagamentoComissao(valorVenda) – desconto
@@ -69,8 +73,8 @@ public class Vendedor {
         return "Código: " + codigo +
                 "\nNome: "+ nome +
                 "\nValor Venda: "+ valorVenda +
-                "\nComissão: "+ percentualComissao +
+                "\nComissão: "+ calcularPagamentoComissao(valorVenda) +
                 "\n Desconto: " + desconto +
-                "\n Valor a Pagar: " + calcularPagamentoComissao( valorVenda, desconto);
+                "\n Valor a Pagar: " + calcularPagamentoComissao(valorVenda, desconto);
     }
 }
